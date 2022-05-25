@@ -31,6 +31,7 @@ const myWebApp = new Vue({
             }
         ]
     },
+
     methods : {
         nextFunc () {
             this.activeSlide++;
@@ -44,6 +45,10 @@ const myWebApp = new Vue({
             if (this.activeSlide < 0) {
                 this.activeSlide = this.slides.length -1;
             };
+        },
+
+        activeFunc (newSlide) {
+            this.activeSlide = newSlide;
         }
     }
 });
