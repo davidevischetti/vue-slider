@@ -55,5 +55,13 @@ const myWebApp = new Vue({
         activeFunc (newSlide) {
             this.activeSlide = newSlide;
         },
+
+        pauseFunc () {
+            
+        },
+
+        startFunc  () {
+
+        }
     }
 });
