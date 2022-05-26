@@ -2,6 +2,7 @@
 const myWebApp = new Vue({
     el : '#app',
     data : {
+        myInterval : '',
         activeSlide : 0,
         slides : [
             {
@@ -33,7 +34,7 @@ const myWebApp = new Vue({
     },
 
     created () {
-        setInterval (this.nextFunc, 3000);
+        this.myInterval = setInterval (this.nextFunc, 3000);
     },
 
     methods : {
@@ -56,12 +57,13 @@ const myWebApp = new Vue({
             this.activeSlide = newSlide;
         },
 
-        pauseFunc () {
-            
+        pauseFunc() {
+            clearInterval(this.myInterval)
+            console.log('pause');
         },
 
-        startFunc  () {
-
+        restartFunc() {
+            this.myInterval = setInterval (this.nextFunc, 3000);
         }
     }
 });
